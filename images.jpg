@@ -1,0 +1,26 @@
+<form id="orderForm">
+  <input type="text" placeholder="Descrição" id="description">
+  <input type="text" placeholder="Status" id="status">
+  <input type="number" placeholder="User ID" id="userId">
+  <button type="submit">Criar Pedido</button>
+</form>
+
+<script>
+document.getElementById('orderForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = {
+    description: document.getElementById('description').value,
+    status: document.getElementById('status').value,
+    userId: Number(document.getElementById('userId').value)
+  };
+  
+  const res = await fetch('http://localhost:8080/orders', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  });
+  
+  const json = await res.json();
+  console.log(json);
+});
+</script>
