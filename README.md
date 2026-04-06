@@ -1,4 +1,4 @@
-# Comida.com
+# PedeFácil
 
 Aplicação full stack de delivery com foco em portfólio, composta por uma API REST em Spring Boot e uma interface web em Next.js.
 
